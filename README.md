@@ -25,7 +25,7 @@ This project contains screenshots and documentation of two dashboards built usin
 ## Screenshots
 
 <img src="Screen Shot 2025-07-19 at 21.20.07.png" width="400"/>
-<img src="Screen Shot 2025-07-19 at 21.20.31.png" width="400"/>
+<img src="Screen Shot 2025-07-19 at 21.22.53.png" width="400"/>
 
 ## Notes
 - Created in Looker Studio (Google Data Studio)
