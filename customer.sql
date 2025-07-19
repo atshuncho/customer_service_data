@@ -24,6 +24,8 @@ SELECT
   SUM(s.sales) AS total_revenue
 FROM products p
 JOIN sales_v2 s ON p.product_key = s.product_key
+WHERE s.order_date >= '2014-01-01'
+-- As the question says the past year, I would use the code to the right, but there has not been an order since 2014: WHERE s.order_date >= CURRENT_DATE - Interval 1 YEAR
 GROUP BY p.product_name
 ORDER BY total_revenue DESC
 LIMIT 10;
@@ -37,7 +39,8 @@ FROM
     customers c
         JOIN
     sales_v2 s ON c.customer_key = s.customer_key
-GROUP BY country;
+GROUP BY country
+ORDER BY average_sales_by_country DESC;
     
 -- 2b. marital status
 
@@ -152,12 +155,8 @@ SELECT
         ELSE 'repeat buyer'
 	END AS buyer_type,
     COUNT(*) AS num_customers
-FROM (
-	SELECT customer_key, COUNT(*) AS num_orders
-    FROM sales_v2
-    GROUP BY customer_key
-)   AS order_counts
-GROUP BY buyer_type;
+
+	
 
 
 
