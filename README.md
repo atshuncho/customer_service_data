@@ -1,36 +1,69 @@
-# Customer Service Sales Dashboards – Looker Studio
+# Customer Service Sales Dashboards – Looker Studio, SQL & Python
 
-This project contains screenshots and documentation of two dashboards built using Google Looker Studio for analyzing customer sales and product performance.
-
-## Dashboards Overview
-
-### 1. **Product and Sales Breakdown**
-- KPIs: Total Revenue, Total Sales, Total Products, Avg Revenue per Customer
-- Charts: Revenue over time, Product breakdown by country, Revenue per product
-
-### 2. **Customer Breakdown**
-- KPIs: Total Customers, Repeat Customers, Most Common Product
-- Charts: Top customers by spend, Customer location map, Monthly trend of sales vs customers
-
-## Data Sources
-- `sales.csv`: Transactional data with customer_key, order_number, sales, quantity, price, dates
-- `customers.csv`: Customer master data
-- `products.csv`: Product master data
-
-## Key Features
-- **Custom filters**: Country, Order Month, Product Name
-- **Repeat Customer Identification**: Logic based on multiple order numbers per customer
-- **Calculated metrics**: Average revenue per customer, total product count, top products
-
-## Screenshots
-
-<img src="Screen Shot 2025-07-19 at 21.23.09.png" width="400"/>
-<img src="Screen Shot 2025-07-19 at 21.22.53.png" width="400"/>
-
-## Notes
-- Created in Looker Studio (Google Data Studio)
-- No SQL used – all metrics were defined using built-in visual tools
+This project analyzes customer purchasing behavior using transactional sales data. It combines SQL and Python analysis with a visual dashboard in Google Looker Studio. The goal is to answer key business questions about customer segments, product performance, and buying trends.
 
 ---
 
-**Last updated**: July 19, 2025
+## Project Components
+
+- **Looker Studio Dashboards**: Visual overview of sales performance and customer behavior
+- **SQL Analysis**: Answers business questions using structured queries
+- **Python Analysis**: Mirrors SQL logic using pandas for deeper data wrangling and visualization
+
+---
+
+## Dashboards Overview
+
+### 1. Product and Sales Breakdown
+- **KPIs**: Total Revenue, Total Sales, Avg Revenue per Customer
+- **Charts**: Revenue over time, Revenue per product, Product breakdown by country
+
+### 2. Customer Breakdown
+- **KPIs**: Total Customers and Most Common Product
+- **Charts**: Top customers by spend, Location map, Monthly sales trend
+
+---
+
+## Data Sources
+
+- `sales.csv`: Transactional sales data (`order_date`, `sales`, `price`, `quantity`)
+- `customers.csv`: Customer demographics (`country`, `gender`, `marital_status`)
+- `products.csv`: Product master data (`product_key`, `product_name`)
+
+---
+
+## Key Features
+
+- **Data Cleaning**: Removed inaccurate rows where `quantity * price ≠ sales`
+- **Repeat Customer Identification**: Based on order frequency
+- **Calculated Metrics**: AOV, product pairs, lead time, monthly trends
+- **Dual implementation**: SQL + Python for cross-validation
+
+---
+
+## Screenshots
+
+<p float="left">
+  <img src="Screen Shot 2025-07-19 at 21.22.53.png" width="400" />
+  <img src="Screen Shot 2025-07-19 at 21.23.09.png" width="400" />
+</p>
+
+---
+
+## Tools Used
+
+- Google Looker Studio
+- SQL (MySQL-style syntax)
+- Python (pandas, itertools, collections)
+
+---
+
+## Folders
+
+| Folder      | Description                                |
+|-------------|--------------------------------------------|
+| `sql/`      | SQL queries and logic with explanations    |
+| `python/`   | Python analysis and insights               |
+| `screenshots/` | Optional folder to store dashboard images |
+
+---
