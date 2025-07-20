@@ -64,6 +64,6 @@ This project analyzes customer purchasing behavior using transactional sales dat
 |-------------|--------------------------------------------|
 | `sql/`      | SQL queries and logic with explanations    |
 | `python/`   | Python analysis and insights               |
-| `screenshots/` | Optional folder to store dashboard images |
+| `screenshots/` | Store dashboard images |
 
 ---
