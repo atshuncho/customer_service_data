@@ -12,7 +12,7 @@ This project analyzes customer purchasing behavior using transactional sales dat
 
 ---
 
-## Dashboards Overview
+## Dashboards Overview https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7
 
 ### 1. Product and Sales Breakdown
 - **KPIs**: Total Revenue, Total Sales, Avg Revenue per Customer
