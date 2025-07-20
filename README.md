@@ -44,8 +44,8 @@ This project analyzes customer purchasing behavior using transactional sales dat
 ## Screenshots
 
 <p float="left">
-  <img src="looker_studio_products_and_sales.png" width="400" />
-  <img src="looker_studio_customers.png" width="400" />
+  <img src="screenshots/looker_studio_products_and_sales.png" width="400" />
+  <img src="screenshots/looker_studio_customers.png" width="400" />
 </p>
 
 ---
