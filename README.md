@@ -29,7 +29,7 @@ To generate actionable insights on:
 - **Repeat buyer behavior**
 
 These insights are visualized in **Looker Studio** to help stakeholders understand customer value and sales performance.
-https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7
+[View Dashboard](https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7)
 
 ---
 
@@ -143,3 +143,4 @@ FROM {{ ref('fact_sales') }}
 GROUP BY customer_key
 ORDER BY total_sales DESC
 LIMIT 10
+```
