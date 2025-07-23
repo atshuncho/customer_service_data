@@ -137,4 +137,3 @@ FROM {{ ref('fact_sales') }}
 GROUP BY customer_key
 ORDER BY total_sales DESC
 LIMIT 10
->>>>>>> f1e9a2bacc65be42d0f1a91b4693d1b3b95001e8
