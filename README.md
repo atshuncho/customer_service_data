@@ -145,3 +145,18 @@ GROUP BY customer_key
 ORDER BY total_sales DESC
 LIMIT 10
 ```
+---
+
+## Questions Answered on Python Script and MySQL
+
+1. **Which products generated the highest revenue over the past year?
+2. **What is the Average Order Value (AOV) by customer segment (country, marital status, gender)
+3. **Who are our top 10 customers by highest sale, most sales and which customers have spent the most?
+4. **.How has sales performance changed month over month? Average and Total.
+5. **What is the average lead time between order date and shipping date by month?
+6. **Which products are most frequently ordered together?
+7. **How many customers are repeat vs one-time buyers?
+
+
+[Python Script](https://github.com/atshuncho/customer_service_data/blob/main/python/customer_insights.py)
+[MySQL Script](https://github.com/atshuncho/customer_service_data/blob/main/sql/customer.sql) 
