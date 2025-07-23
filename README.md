@@ -29,6 +29,7 @@ To generate actionable insights on:
 - **Repeat buyer behavior**
 
 These insights are visualized in **Looker Studio** to help stakeholders understand customer value and sales performance.
+https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7
 
 ---
 
@@ -52,7 +53,7 @@ Below are some of the dbt models and their business purpose:
 
 | Model                         | Description                                                                 |
 |------------------------------|-----------------------------------------------------------------------------|
-| `fact_sales.sql`             | Cleaned version of raw sales data                                           |
+| `fact_sales.sql`             | products_data.sql, customer_data.sql and sales_data.sql merged together for simple reference                                           |
 | `products_data.sql`          | Cleaned product data for joins and aggregation                             |
 | `customer_data.sql`          | Cleaned customer profile dataset                                            |
 | `top_customers_by_sale.sql`  | Shows the top 10 customers by total sales                                   |
