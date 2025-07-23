@@ -1,70 +1,57 @@
-# Customer Service Sales Dashboards – Looker Studio, SQL & Python
+# Customer Service Data Analysis Project
 
-This project analyzes customer purchasing behavior using transactional sales data. It combines SQL and Python analysis with a visual dashboard in Google Looker Studio. The goal is to answer key business questions about customer segments, product performance, and buying trends.
+This project explores customer purchasing behavior using SQL and dbt (Data Build Tool). It combines and transforms raw sales, product, and customer data into clean, tested, and insightful datasets for analysis and dashboarding.
 
----
+## 🔍 Objective
 
-## Project Components
+To generate actionable insights on:
+- **Top spending customers**
+- **Product sales trends**
+- **Customer segmentation**
+- **Repeat buyer behavior**
 
-- **Looker Studio Dashboards**: Visual overview of sales performance and customer behavior
-- **SQL Analysis**: Answers business questions using structured queries
-- **Python Analysis**: Mirrors SQL logic using pandas for deeper data wrangling and visualization
-
----
-
-## Dashboards Overview 
-https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7
-
-### 1. Product and Sales Breakdown
-- **KPIs**: Total Revenue, Total Sales, Avg Revenue per Customer
-- **Charts**: Revenue over time, Revenue per product, Product breakdown by country
-
-### 2. Customer Breakdown
-- **KPIs**: Total Customers and Most Common Product
-- **Charts**: Top customers by spend, Location map, Monthly sales trend
+These insights are visualized in **Looker Studio** to help stakeholders understand customer value and sales performance.
 
 ---
 
-## Data Sources
+## Project Structure
 
-- `sales.csv`: Transactional sales data (`order_date`, `sales`, `price`, `quantity`)
-- `customers.csv`: Customer demographics (`country`, `gender`, `marital_status`)
-- `products.csv`: Product master data (`product_key`, `product_name`)
-
----
-
-## Key Features
-
-- **Data Cleaning**: Removed inaccurate rows where `quantity * price ≠ sales`
-- **Repeat Customer Identification**: Based on order frequency
-- **Calculated Metrics**: AOV, product pairs, lead time, monthly trends
-- **Dual implementation**: SQL + Python for cross-validation
+| Folder | Description |
+|--------|-------------|
+| `models/` | dbt models – raw and transformed SQL files |
+| `seeds/` | CSV seed files ingested into BigQuery |
+| `tests/` | dbt tests and assertions for model quality |
+| `snapshots/` | Historical data snapshots (for slowly changing dimensions – optional) |
+| `analyses/` | Ad hoc SQL scripts and deep dives |
+| `macros/` | Reusable SQL functions (Jinja templates) |
+| `python/` | Python scripts for data processing or EDA |
+| `screenshots/` | Project images and documentation examples |
 
 ---
 
-## Screenshots
+## 🏗Data Pipeline Overview
 
-<p float="left">
-  <img src="screenshots/looker_studio_products_and_sales.png" width="400" />
-  <img src="screenshots/looker_studio_customers.png" width="400" />
-</p>
-
----
-
-## Tools Used
-
-- Google Looker Studio
-- SQL (MySQL-style syntax)
-- Python (pandas, itertools, collections)
+1. **Seeded raw data** (`sales`, `products`, `customers`) into BigQuery.
+2. **Joined datasets** in the `fact_sales.sql` model using dbt.
+3. Built a **summary model**: `top_customers_by_sale.sql` to show highest value customers.
+4. Created a **YAML schema file** to:
+   - Document models and columns
+   - Add automated tests (e.g., `not_null`, `unique`)
+5. **Built models using dbt CLI / dbt Cloud**.
+6. **Tested** model assumptions using `dbt test`.
+7. **Deployed** transformations to BigQuery and versioned changes in GitHub.
 
 ---
 
-## Folders
+## Example: `top_customers_by_sale`
 
-| Folder      | Description                                |
-|-------------|--------------------------------------------|
-| `sql/`      | SQL queries and logic with explanations    |
-| `python/`   | Python analysis and insights               |
-| `screenshots/` | Store dashboard images |
+Shows the top 10 customers by total sales.
 
----
+```sql
+SELECT
+  customer_key,
+  SUM(sales) AS total_sales
+FROM {{ ref('fact_sales') }}
+GROUP BY customer_key
+ORDER BY total_sales DESC
+LIMIT 10
