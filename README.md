@@ -97,13 +97,13 @@ Data is sourced from BigQuery views generated from my dbt models.
 4. Commit updates to **GitHub**
 5. Query cleaned data in **BigQuery**
 6. Visualise in **Looker Studio**
-=======
+
 | Folder | Description |
 |--------|-------------|
 | `models/` | dbt models – raw and transformed SQL files |
 | `seeds/` | CSV seed files ingested into BigQuery |
 | `tests/` | dbt tests and assertions for model quality |
-| `snapshots/` | Historical data snapshots (for slowly changing dimensions – optional) |
+| `snapshots/` | Historical data snapshots (for slowly changing dimensions|
 | `analyses/` | Ad hoc SQL scripts and deep dives |
 | `macros/` | Reusable SQL functions (Jinja templates) |
 | `python/` | Python scripts for data processing or EDA |
