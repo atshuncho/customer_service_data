@@ -88,6 +88,11 @@ Built in **Looker Studio**, includes:
 
 Data is sourced from BigQuery views generated from my dbt models.
 
+<p float="left">
+  <img src="screenshots/looker_studio_product_sales.png" width="400" />
+  <img src="screenshots/looker_studio_customer_breakdown.png" width="400" />
+</p>
+
 ---
 
 ## Workflow
