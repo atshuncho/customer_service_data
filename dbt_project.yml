@@ -1,0 +1,15 @@
+
+name: customer_service_project
+version: '1.0'
+config-version: 2
+
+profile: customers_project
+
+seeds:
+  customer_service_data:
+    customers:
+      file: data/customers.csv
+    products:
+      file: data/products.csv
+    sales:
+      file: data/sales.csv

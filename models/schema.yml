@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: top_customers_by_sale
+    description: "Model showing top 10 customers by total sales."
+    columns:
+      - name: customer_key
+        description: "Unique ID for each customer."
+        tests:
+          - not_null
+          - unique
+      - name: total_sales
+        description: "Total sales for each customer."
+        tests:
+          - not_null
