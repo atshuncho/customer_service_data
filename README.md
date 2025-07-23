@@ -45,8 +45,8 @@ https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7
 ## Screenshots
 
 <p float="left">
-  <img src="screenshots/looker_studio_products_and_sales.png" width="400" />
-  <img src="screenshots/looker_studio_customers.png" width="400" />
+  <img src="screenshots/looker_studio_product_sales.png" width="400" />
+  <img src="screenshots/looker_studio_customer_breakdown.png" width="400" />
 </p>
 
 ---
