@@ -1,70 +1,83 @@
-# Customer Service Sales Dashboards – Looker Studio, SQL & Python
+This version is further testing in DBT Sudio.
 
-This project analyzes customer purchasing behavior using transactional sales data. It combines SQL and Python analysis with a visual dashboard in Google Looker Studio. The goal is to answer key business questions about customer segments, product performance, and buying trends.
+# Customer Analytics Project
 
----
-
-## Project Components
-
-- **Looker Studio Dashboards**: Visual overview of sales performance and customer behavior
-- **SQL Analysis**: Answers business questions using structured queries
-- **Python Analysis**: Mirrors SQL logic using pandas for deeper data wrangling and visualization
-
----
-
-## Dashboards Overview 
-https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7
-
-### 1. Product and Sales Breakdown
-- **KPIs**: Total Revenue, Total Sales, Avg Revenue per Customer
-- **Charts**: Revenue over time, Revenue per product, Product breakdown by country
-
-### 2. Customer Breakdown
-- **KPIs**: Total Customers and Most Common Product
-- **Charts**: Top customers by spend, Location map, Monthly sales trend
-
----
-
-## Data Sources
-
-- `sales.csv`: Transactional sales data (`order_date`, `sales`, `price`, `quantity`)
-- `customers.csv`: Customer demographics (`country`, `gender`, `marital_status`)
-- `products.csv`: Product master data (`product_key`, `product_name`)
-
----
-
-## Key Features
-
-- **Data Cleaning**: Removed inaccurate rows where `quantity * price ≠ sales`
-- **Repeat Customer Identification**: Based on order frequency
-- **Calculated Metrics**: AOV, product pairs, lead time, monthly trends
-- **Dual implementation**: SQL + Python for cross-validation
-
----
-
-## Screenshots
-
-<p float="left">
-  <img src="screenshots/looker_studio_products_and_sales.png" width="400" />
-  <img src="screenshots/looker_studio_customers.png" width="400" />
-</p>
+This project explores customer purchasing behaviour through cleaned and transformed datasets in BigQuery using dbt. It includes end-to-end data modeling, testing, and dashboarding in Looker Studio to enable customer segmentation, repeat buyer analysis, and revenue insights.
 
 ---
 
 ## Tools Used
 
-- Google Looker Studio
-- SQL (MySQL-style syntax)
-- Python (pandas, itertools, collections)
+- **dbt Cloud** – for data transformation, testing, version control, and model documentation  
+- **Google BigQuery** – cloud data warehouse for querying and storing models  
+- **Google Looker Studio** – dashboarding and visual analytics  
+- **SQL** – dbt models and transformations (BigQuery SQL)  
+- **Git & GitHub** – version control and collaboration  
+- **Python (pandas, itertools)** – used for additional analysis (optional)
 
 ---
 
-## Folders
+## Project Structure
 
-| Folder      | Description                                |
-|-------------|--------------------------------------------|
-| `sql/`      | SQL queries and logic with explanations    |
-| `python/`   | Python analysis and insights               |
-| `screenshots/` | Store dashboard images |
+| Folder             | Description                                                  |
+|--------------------|--------------------------------------------------------------|
+| `models/`          | All dbt models used to transform and clean the data          |
+| `tests/`           | dbt tests for data quality (e.g., not null, unique)          |
+| `seeds/`           | Seed files used to load data into dbt                        |
+| `snapshots/`       | dbt snapshots for tracking slowly changing dimensions        |
+| `screenshots/`     | Stored Looker Studio dashboard images                        |
+| `python/`          | Additional Python scripts for customer insights              |
 
 ---
+
+## DBT Models Built
+
+Below are some of the dbt models and their business purpose:
+
+| Model                         | Description                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| `fact_sales.sql`             | Cleaned version of raw sales data                                           |
+| `products_data.sql`          | Cleaned product data for joins and aggregation                             |
+| `customer_data.sql`          | Cleaned customer profile dataset                                            |
+| `top_customers_by_sale.sql`  | Shows the top 10 customers by total sales                                   |
+| `repeat_buyers.sql`          | Identifies customers who ordered more than once                             |
+| `average_sales.sql`          | Calculates average sales across all orders                                  |
+| `total_monthly_sales.sql`    | Total sales grouped by month and year (used for time-series visualisation) |
+
+Each model is defined in `models/`, versioned, and tested using schema.yml for quality control.
+
+---
+
+## DBT Testing & Documentation
+
+I have implemented:
+
+- **Schema tests**: `not_null`, `unique` on key fields (e.g., `customer_key`)
+- **Descriptive metadata**: All models and columns have descriptions
+- **Version control**: dbt changes are committed to GitHub (`patch-1` branch)
+
+---
+
+## Dashboard: Customer Sales Overview
+
+Built in **Looker Studio**, includes:
+
+- Total Customers
+- Sales Volume
+- Repeat Buyers
+- Most Popular Products
+- Monthly Revenue Trends
+- Filter by Country, Year, Month
+
+Data is sourced from BigQuery views generated from your dbt models.
+
+---
+
+## Workflow
+
+1. Load raw CSV data using `seeds/`
+2. Transform data in **dbt Cloud**
+3. Run **tests** and **build models**
+4. Commit updates to **GitHub**
+5. Query cleaned data in **BigQuery**
+6. Visualise in **Looker Studio**
