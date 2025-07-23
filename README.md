@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This version is further testing in DBT Sudio.
 
 # Customer Analytics Project
