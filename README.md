@@ -30,7 +30,6 @@ To generate actionable insights on:
 
 These insights are visualized in **Looker Studio** to help stakeholders understand customer value and sales performance.
 
->>>>>>> f1e9a2bacc65be42d0f1a91b4693d1b3b95001e8
 ---
 
 ## Project Structure
