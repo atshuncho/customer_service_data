@@ -13,9 +13,9 @@ This project explores customer purchasing behaviour through cleaned and transfor
 - **Google Looker Studio** – dashboarding and visual analytics  
 - **SQL** – dbt models and transformations (BigQuery SQL)  
 - **Git & GitHub** – version control and collaboration  
-- **Python (pandas, itertools)** – used for additional analysis (optional)
+- **Python (pandas, itertools)** – used for additional analysis
 
-=======
+
 # Customer Service Data Analysis Project
 
 This project explores customer purchasing behavior using SQL and dbt (Data Build Tool). It combines and transforms raw sales, product, and customer data into clean, tested, and insightful datasets for analysis and dashboarding.
@@ -86,7 +86,7 @@ Built in **Looker Studio**, includes:
 - Monthly Revenue Trends
 - Filter by Country, Year, Month
 
-Data is sourced from BigQuery views generated from your dbt models.
+Data is sourced from BigQuery views generated from my dbt models.
 
 ---
 
