@@ -31,7 +31,10 @@ These insights are visualized in **Looker Studio** to help stakeholders understa
 
 ---
 
-## Project Structure
+
+## Dashboards Overview 
+[View Dashboard](https://lookerstudio.google.com/reporting/0fa75936-66b1-4874-870b-a6129cfee1f7)
+
 
 
 | Folder             | Description                                                  |
