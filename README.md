@@ -2,7 +2,7 @@
 
 This project explores customer purchasing behavior using SQL and dbt (Data Build Tool). It combines and transforms raw sales, product, and customer data into clean, tested, and insightful datasets for analysis and dashboarding.
 
-## 🔍 Objective
+## Objective
 
 To generate actionable insights on:
 - **Top spending customers**
@@ -29,7 +29,7 @@ These insights are visualized in **Looker Studio** to help stakeholders understa
 
 ---
 
-## 🏗Data Pipeline Overview
+## Data Pipeline Overview
 
 1. **Seeded raw data** (`sales`, `products`, `customers`) into BigQuery.
 2. **Joined datasets** in the `fact_sales.sql` model using dbt.
