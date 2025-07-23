@@ -1,5 +1,3 @@
-This version is further testing in DBT Sudio.
-
 # Customer Analytics Project
 
 This project explores customer purchasing behaviour through cleaned and transformed datasets in BigQuery using dbt. It includes end-to-end data modeling, testing, and dashboarding in Looker Studio to enable customer segmentation, repeat buyer analysis, and revenue insights.
