@@ -35,7 +35,7 @@ These insights are visualized in **Looker Studio** to help stakeholders understa
 
 ## Project Structure
 
-<<<<<<< HEAD
+
 | Folder             | Description                                                  |
 |--------------------|--------------------------------------------------------------|
 | `models/`          | All dbt models used to transform and clean the data          |
